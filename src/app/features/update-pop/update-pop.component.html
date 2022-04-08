@@ -1,0 +1,13 @@
+
+<form [formGroup]="myGroup"  class="example-container d-flex" style = "display: flex; gap: 10px;">
+    <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Nome" name="name"  required formControlName = "name">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Potenza</mat-label>
+        <input matInput placeholder="Potenza" name="power"  required formControlName = "power">
+    </mat-form-field>
+    <button mat-raised-button type="submit" [disabled]='!isValid' style="padding: 10px; margin-top: 15px;">Aggiungi</button>
+</form>
+

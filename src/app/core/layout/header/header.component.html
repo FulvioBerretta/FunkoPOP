@@ -1,0 +1,14 @@
+<mat-toolbar class="mat-background-primary border w-100" style = "background-color: red;  width: 100%; height: 90px; display: flex; align-content: center; padding: 0; justify-content: center; object-fit: contain">
+    <div class="" style="object-fit: contain; display: flex; justify-content: center; align-content: center; height: 80px; width:160px ">
+        <img src="assets/img/Marvel_Comics_(2012)_(Print_2).svg" style="width: 100%; height: 100%;" alt="">
+    </div>
+</mat-toolbar>
+
+<!--TOOLBAR PER LA NAVIGAZIONE DEL SITO PREFERITI E GESTIONE POP-->
+<mat-toolbar class="header-class">
+        <button mat-raised-button submit = "gestionePop"  routerLink="gestionePop" routerLinkActive="active" class="header-button"> POP Details</button>
+        <button mat-button submit = "preferiti"  routerLink="preferiti" routerLinkActive="active" class="header-button"> Favorites</button>
+        <button mat-button submit = "aggiungiPop"  routerLink="aggiungiPop" routerLinkActive="active" class="header-button"> Add POP</button>
+        <button mat-button submit = "modificaPop"  routerLink="modificaPop" routerLinkActive="active" class="header-button"> Modifica POP</button>
+</mat-toolbar>
+

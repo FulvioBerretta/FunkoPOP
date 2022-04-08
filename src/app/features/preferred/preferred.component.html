@@ -1,0 +1,22 @@
+
+<div  style="display: flex; justify-content: center; flex-direction: row; flex-wrap: wrap; gap: 20px; width: 100%;">
+    <div *ngFor="let pop of favoritePops" >
+        <app-card class="align-things">
+            <mat-card-header class="align-things">
+                <div>
+
+                    <mat-card-title>{{pop?.eroe}}</mat-card-title>
+                    <mat-card-subtitle>{{pop?.abilita}}</mat-card-subtitle>
+                    <img  src="https://picsum.photos/15" alt="Marvel Super Hero" style="width: 100px; height: 100px">
+                </div>
+
+            </mat-card-header>
+
+            <mat-card-content class="align-things">
+                <strong>Data di uscita:</strong>
+                <p>{{pop?.dataUscita | date: 'dd/MM/yyyy'}}</p>
+            </mat-card-content>
+        </app-card>
+    </div>
+</div>
+

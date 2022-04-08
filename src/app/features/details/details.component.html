@@ -1,0 +1,52 @@
+<div style="display: flex; justify-content: center; margin: 2%; padding: 10px;">
+    <table mat-table [dataSource]="pops" class="mat-elevation-z8" style="width:100%;">
+
+        <ng-container matColumnDef="eroe">
+            <th mat-header-cell *matHeaderCellDef> Nome eroe </th>
+            <td mat-cell *matCellDef="let element"> {{element.eroe}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="abilita">
+            <th mat-header-cell *matHeaderCellDef> Abilità </th>
+            <td mat-cell *matCellDef="let element"> {{element.abilita}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="dataUscita">
+            <th mat-header-cell *matHeaderCellDef> Data Uscita </th>
+            <td mat-cell *matCellDef="let element"> {{element.dataUscita | date: ('dd/MM/yyyy')}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="potenza">
+            <th mat-header-cell *matHeaderCellDef> Potenza </th>
+            <td mat-cell *matCellDef="let element"> {{element.potenza | strength}} </td>
+        </ng-container>
+
+        <!---preferring-->
+        <ng-container matColumnDef="preferito" >
+            <th mat-header-cell *matHeaderCellDef> Preferito </th>
+            <td   mat-cell *matCellDef="let element">
+                <div  (click)="changeFavorite(element)" style="width: 20px; height: 20px;" >
+                    <img *ngIf="!element.preferito" src="assets/img/star.svg">
+                    <img *ngIf="element.preferito" src="assets/img/star-fill.svg">
+                </div>
+            </td>
+            <!--Se l'elemento è preferito allora renderizza la stellina piena altrimenti vuota-->
+
+        </ng-container>
+        <!--------------->
+
+
+        <ng-container matColumnDef="view">
+            <th mat-header-cell *matHeaderCellDef>view</th>
+            <td mat-cell *matCellDef="let element"> <img src="assets/img/eye-fill.svg"> </td>
+        </ng-container>
+        <ng-container matColumnDef="delete">
+            <th mat-header-cell *matHeaderCellDef>delete</th>
+            <td mat-cell  *matCellDef="let element" (click)="deletePop(element)"> <img src="assets/img/trash.svg"> </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+</div>
+
