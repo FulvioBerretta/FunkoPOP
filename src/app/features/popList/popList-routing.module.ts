@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {DetailsComponent} from "./details.component";
+import {PopListComponent} from "./popList.component";
 
 const routes: Routes = [
-  { path: '', pathMatch:'full', component: DetailsComponent }
+  { path: '', pathMatch:'full', component: PopListComponent }
 
 
 
@@ -13,4 +13,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class DetailsRoutingModule { }
+export class PopListRoutingModule { }

@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {DetailsComponent} from "../details/details.component";
+import {PopListComponent} from "../popList/popList.component";
 
 const routes: Routes = [
-  { path: 'gestionePop', pathMatch:'full', component: DetailsComponent }
+  { path: 'gestionePop', pathMatch:'full', component: PopListComponent }
 ];
 
 @NgModule({

@@ -1,55 +1,10 @@
-<!--<p>form works!</p>-->
-<!--<div class="container">-->
-<!--    <mat-card class="mw-75">-->
-<!--        <form #myForm="ngForm" class="example-container d-flex" (submit)="upsertModel(myForm)">-->
-<!--            <div>-->
-<!--                <div>-->
-<!--                    <mat-form-field appearance="fill">-->
-<!--                        <mat-label>Nome</mat-label>-->
-<!--                        <input required minlength="3" matInput ngModel name="name">-->
-<!--                    </mat-form-field>-->
-<!--                    <p *ngIf="!isNameValid" class="mat-background-warn">{{errorMessage}}</p>-->
-<!--                </div>-->
-
-<!--                <mat-form-field appearance="fill">-->
-<!--                    <mat-label>Abilità</mat-label>-->
-<!--                    <input required minlength="3" matInput ngModel name="ability">-->
-<!--                </mat-form-field>-->
-
-<!--                <mat-form-field appearance="fill">-->
-<!--                    <mat-label>Data di rilascio</mat-label>-->
-<!--                    <input matInput [matDatepicker]="picker" ngModel name="releaseDate">-->
-<!--                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>-->
-<!--                    <mat-datepicker #picker></mat-datepicker>-->
-<!--                </mat-form-field>-->
-<!--            </div>-->
-
-<!--            <div>-->
-<!--                <mat-form-field appearance="fill">-->
-<!--                    <mat-label>Potere</mat-label>-->
-<!--                    <input matInput type="number" ngModel name="power">-->
-<!--                </mat-form-field>-->
-
-<!--                <mat-form-field appearance="fill">-->
-<!--                    <mat-label>Arma</mat-label>-->
-<!--                    <input matInput ngModel name="weapon">-->
-<!--                </mat-form-field>-->
-
-<!--                <mat-checkbox class="ml-8" ngModel name="isFavourite">Preferiti</mat-checkbox>-->
-
-<!--            </div>-->
-
-<!--            <button mat-raised-button type="submit" [disabled]="myForm.invalid">Aggiungi</button>-->
-<!--        </form>-->
-<!--    </mat-card>-->
-
 <div style = "width: 100%; display: flex; justify-content: center; margin: 20px; ">
-    <h2>{{title}}</h2>
-    <mat-card style="width: 50%; display: flex; justify-content: center; box-shadow: black">
-        <div class="form-group" style="display: flex; justify-content: center; flex-direction: column; gap: 10px;">
-            <form #popForm = "ngForm" class="example-container d-flex" (submit)="upsertModel(popForm)" stile="display: flex; justify-content: center; flex-direction: column;">
 
+    <mat-card style="width: 50%; display: flex; justify-content: center; box-shadow: black; ">
 
+            <form #popForm = "ngForm" class="example-container d-flex" (submit)="upsertModel(popForm)" style="display: flex; justify-content: center; flex-direction: column;">
+
+                <h2>{{title}}</h2>
                 <!--<input matInput type="text" ngModel name="name" required>-->
                 <mat-label for="name">first Name</mat-label>
                 <input id="name"
@@ -60,16 +15,21 @@
                        placeholder="name"
                        ngModel name="name">
 
+                <!--Hero Ability -->
+                <mat-label for="power">Hero Power</mat-label>
+                <select class="form-control" id="ability" required ngModel>
+                    <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+                </select>
 
                 <!--<input matInput type="text" ngModel name="ability" required>-->
 
-                <mat-label for="ability">Abilità</mat-label>
-                <input id="abilityNuber"
+                <mat-label for="ability">Potenza</mat-label>
+                <input id="power"
                        type="number"
                        class="form-control"
                        required
-                       placeholder="Potenza"
-                       ngModel name="abilityNumber">
+                       placeholder="power"
+                       ngModel name="power">
 
                 <mat-label for="releaseDate">Data rilascio</mat-label>
                 <input id="releaseDate"
@@ -79,23 +39,10 @@
                        placeholder="Data di rilascio"
                        ngModel name="releaseDate">
 
-                <!--<input matInput type="text" ngModel name="power" required>-->
-
-
-                <!--Hero Power -->
-                <mat-label for="power">Hero Power</mat-label>
-                <select class="form-control" id="power" required>
-                    <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
-                </select>
                 <mat-checkbox class="ml-8" placeholder="Preferiti" ngModel name="favorite">preferiti</mat-checkbox>
                 <button mat-raised-button type="submit" style="padding: 10px; margin-top: 15px;">Aggiungi</button>
             </form>
-        </div>
-
-
-
     </mat-card>
-
 </div>
 >
 

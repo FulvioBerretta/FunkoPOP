@@ -9,7 +9,9 @@ import {FormControl, FormGroup, NgForm, Validator, Validators} from "@angular/fo
 export class UpdatePopComponent implements OnInit {
   isValid: boolean =  false;
 
-  constructor() { }
+  constructor() {
+
+  }
 
   ngOnInit(): void {
   }

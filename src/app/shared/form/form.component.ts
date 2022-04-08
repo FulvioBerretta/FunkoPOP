@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Pop} from "../model/pop.interface";
-import {favoritePopsDB, POPS} from "../model/pop.DB";
+import {favoritePopsDB, POPS} from "../../core/layout/store/pop.DB";
 import {NgForm} from "@angular/forms";
 
 @Component({
@@ -45,7 +45,7 @@ export class FormComponent implements OnInit {
           {
             id: 0,
             eroe: popForm.value['name'],
-            abilita:  popForm.value['ability'],
+            abilita:  popForm.value['ability'].submitted,
             dataUscita: popForm.value['releaseDate'],
             potenza: popForm.value['power'],
             preferito: popForm.value['favorite'],

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardComponent } from './card/card.component';
 import {MatCardModule} from "@angular/material/card";
-import {StrengthPipe} from "./model/strength.pipe";
+import {StrengthPipe} from "../core/layout/pipe/strength.pipe";
 import { FormComponent } from './form/form.component';
 import {FormsModule} from "@angular/forms";
 import {MatFormFieldModule} from "@angular/material/form-field";

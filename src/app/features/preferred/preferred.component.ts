@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Pop} from "../../shared/model/pop.interface";
-import {favoritePopsDB} from "../../shared/model/pop.DB";
+import {favoritePopsDB} from "../../core/layout/store/pop.DB";
 
 @Component({
   selector: 'app-preferred',
@@ -12,14 +12,6 @@ export class PreferredComponent implements OnInit {
 
   // favoritePops from  parent component
   favoritePops: Pop[] = favoritePopsDB;
-
-
-
-
-
-
-
-
 
   constructor() { }
 
