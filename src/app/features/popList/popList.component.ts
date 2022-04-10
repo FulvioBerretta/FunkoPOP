@@ -9,29 +9,29 @@ import {Pop} from "../../shared/model/pop.interface";
 })
 export class PopListComponent implements OnInit{
 
-  pops: Pop[]  = POPS;
+  pops: Pop[] = []; // list of pops
+  favoritePops: Pop[] = favoritePopsDB;
 
   displayedColumns: string[] = ['eroe','abilita', 'dataUscita', 'potenza', 'preferito','view', 'delete'];
 
 
   constructor() {
-
-
   }
 
   ngOnInit(): void {
+   this.pops = POPS;
   }
 
 
 
   // add pop to favoritePopDB if not present set pop to favorite otherwise remove it and set the pop to not favorite
   changeFavorite(pop: Pop) {
-    if (favoritePopsDB.find(p => p.id === pop.id)) {
+    if (this.favoritePops.find(p => p.id === pop.id)) {
       pop.preferito = false;
       this.deletePopFromFavorite(pop);
     } else {
       pop.preferito = true;
-      favoritePopsDB.push(pop);
+      this.favoritePops.push(pop);
 
     }
   }
@@ -39,19 +39,19 @@ export class PopListComponent implements OnInit{
 
   //delete pop from favoritePopDB
   deletePopFromFavorite(pop: Pop) {
-    const index = favoritePopsDB.findIndex(p => p.id === pop.id);
-    favoritePopsDB.splice(index, 1);
+    let index = this.favoritePops.findIndex(p => p.id === pop.id);
+    this.favoritePops.splice(index, 1);
   }
 
   //delete pop from list of pops
   deletePop(pop: Pop) {
-    const index = this.pops?.findIndex(p => p.id === pop.id);
-    this.pops?.splice(index, 1);
+    let index = this.pops?.findIndex(p => p.id === pop.id);
+    if(index)
+      this.pops?.splice(index, 1);
     this.pops = this.pops?.filter(p => p.id !== pop.id); // delete pop from list of pops
-    
-    //
+
     //delete pop from favoritePopDB if present
-    if (favoritePopsDB.find(p => p.id === pop.id)) {
+    if (this.favoritePops.find(p => p.id === pop.id)) {
       this.deletePopFromFavorite(pop);
     }
 

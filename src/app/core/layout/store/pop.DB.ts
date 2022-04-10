@@ -136,4 +136,4 @@ export const POPS: Pop[] = [
     }
 ];
 
-export const favoritePopsDB: Pop[] = [];
+export let favoritePopsDB: Pop[] = [];

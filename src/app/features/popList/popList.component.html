@@ -3,7 +3,7 @@
 
         <ng-container matColumnDef="eroe">
             <th mat-header-cell *matHeaderCellDef> Nome eroe </th>
-            <td mat-cell *matCellDef="let element"> {{element.eroe}} </td>
+            <td mat-cell *matCellDef="let element"> {{element?.eroe}} </td>
         </ng-container>
 
         <ng-container matColumnDef="abilita">

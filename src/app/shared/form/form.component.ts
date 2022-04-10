@@ -10,7 +10,7 @@ import {NgForm} from "@angular/forms";
 })
 export class FormComponent implements OnInit {
 
-
+ model: Pop | undefined;
 
 
   title: string = 'Aggiungi un nuovo eroe';
@@ -30,7 +30,7 @@ export class FormComponent implements OnInit {
 
   upsertModel(popForm: NgForm) {
     POPS.push(
-      {
+       this.model = {
             id: 0,
             eroe: popForm.value['name'],
             abilita:  popForm.value['ability'],
@@ -40,16 +40,9 @@ export class FormComponent implements OnInit {
       }
     )
       //if favorite is true, add to favorite array
-      if(popForm.value['favorite'] == true){
+      if(this.model.preferito){
         favoritePopsDB.push(
-          {
-            id: 0,
-            eroe: popForm.value['name'],
-            abilita:  popForm.value['ability'].submitted,
-            dataUscita: popForm.value['releaseDate'],
-            potenza: popForm.value['power'],
-            preferito: popForm.value['favorite'],
-          }
+          this.model
         )
       }
   }
